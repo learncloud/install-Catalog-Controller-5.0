@@ -47,6 +47,7 @@
    kubectl create namespace catalog
    
    # RBAC란 ? 역할 기반 액세스 제어를 
+   # 폴더 위치 : install-Catalog-Controller-5.0/manifest/yaml
    kubectl apply -f serviceaccounts.yaml
    kubectl apply -f rbac.yaml 
    
