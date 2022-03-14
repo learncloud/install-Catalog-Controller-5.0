@@ -56,11 +56,17 @@
 ## Step 3. catalog manager 생성
 - 목적 : `catalog manager 생성`
 - 생성 순서 : 아래 command로 yaml 적용
-   
-    - kubectl apply -f controller-manager-deployment.yaml ([파일](./manifest/yaml/controller-manager-deployment.yaml))
-        - 비고: 반드시!!, 각 파일에 image 항목의 {imageRegistry}와 {catalogVersion}은  사용자 환경에 맞게 수정해야 합니다. ({imageRegistry}/kubernetes-service-catalog/service-catalog:v{catalogVersion})
-    - kubectl apply -f controller-manager-service.yaml ([파일](./manifest/yaml/controller-manager-service.yaml))
-
+    ```bash
+    # 반드시 각 파일에 image 항목의 {imageRegistry}와 {catalogVersion}은  사용자 환경에 맞게 수정
+    # {imageRegistry}/kubernetes-service-catalog/service-catalog:v{catalogVersion} → 192.168.178.17:5000/kubernetes-service-catalog/service-catalog:v0.3.0 `or` quay.io/kubernetes-service-catalog/service-catalog:v0.3.0
+    
+    # 파일 위치 : ./manifest/yaml/controller-manager-deployment.yaml
+    kubectl apply -f controller-manager-deployment.yaml
+    
+    #파일위치 : ./manifest/yaml/controller-manager-service.yaml
+    kubectl apply -f controller-manager-service.yaml
+    
+    ```
 ## Step 4. webhook 인증 키 생성
 - 목적 : `webhook 인증에 필요한 키를 생성`
 - 생성 순서 : 아래 command 적용
