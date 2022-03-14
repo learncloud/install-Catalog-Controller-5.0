@@ -86,8 +86,10 @@
     ```bash
     cd ~/install-Catalog-Controller-5.0
     openssl genrsa -out rootca.key 2048
+    
+    # 비고: .rnd 파일이 없어서 해당 명령어 실행이 안되는 경우 /etc/ssl/openssl.cnf 파일의  "RANDFILE = $ENV::HOME/.rnd" 부분을 주석처리 합니다.
     openssl req -x509 -new -nodes -key rootca.key -sha256 -days 3650 -subj /C=KO/ST=None/L=None/O=None/CN=catalog-catalog-webhook -out rootca.crt
-      # 비고: .rnd 파일이 없어서 해당 명령어 실행이 안되는 경우, /etc/ssl/openssl.cnf 파일의  "RANDFILE = $ENV::HOME/.rnd" 부분을 주석처리 합니다.
+    
     # v3.ext 생성
     cp manifest/ca/v3.ext ~/install-Catalog-Controller-5.0
     
