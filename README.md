@@ -82,6 +82,7 @@
 ## Step 4. webhook 인증 키 생성
 - 목적 : `webhook 인증에 필요한 키를 생성`
 - 생성 순서 : 아래 command 적용
+    - cd ~/install-Catalog-Controller-5.0
     - openssl genrsa -out rootca.key 2048
     - openssl req -x509 -new -nodes -key rootca.key -sha256 -days 3650 -subj /C=KO/ST=None/L=None/O=None/CN=catalog-catalog-webhook -out rootca.crt
         - 비고: .rnd 파일이 없어서 해당 명령어 실행이 안되는 경우, /etc/ssl/openssl.cnf 파일의  "RANDFILE = $ENV::HOME/.rnd" 부분을 주석처리 합니다.
