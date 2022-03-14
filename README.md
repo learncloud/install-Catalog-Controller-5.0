@@ -104,7 +104,8 @@
 ## Step 5. catalog-webhook 생성
 - 목적 : `catalog-webhook 생성`
 - 생성 순서 : 아래 command 적용
-    - kubectl apply -f webhook-register.yaml ([파일](./manifest/yaml/webhook-register.yaml))
+    - cd ~/install-Catalog-Controller-5.0/manifest/yaml
+    - kubectl apply -f webhook-register.yaml
         - 비고: 해당 파일의 변수를 7번에서 생성한 키로 대체 합니다. (단, 생성된 키 공백은 모두 지우셔야 합니다.)
             - {{ b64enc $ca.Cert }} --> key0 내부 값으로 대체
             - {{ b64enc $cert.Cert }} --> cert 내부 값으로 대체
