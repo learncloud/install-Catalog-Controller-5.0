@@ -69,6 +69,15 @@
     kubectl apply -f controller-manager-service.yaml
     
     ```
+    
+ - 참고 : docker image가 없을 경우
+   ```bash
+   docker pull quay.io/kubernetes-service-catalog/service-catalog:v0.3.0
+   docker tag quay.io/kubernetes-service-catalog/service-catalog:v0.3.0 192.168.178.17:5000/service-catalog:v0.3.0
+   docker push 192.168.178.17:5000/service-catalog:v0.3.0
+
+   ```
+   
 ## Step 4. webhook 인증 키 생성
 - 목적 : `webhook 인증에 필요한 키를 생성`
 - 생성 순서 : 아래 command 적용
