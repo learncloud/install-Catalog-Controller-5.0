@@ -42,10 +42,16 @@
 ## Step 2. catalog controller namespace 및 servcice account 생성
 - 목적 : `catalog controller namespace 및 servcice account 생성`
 - 생성 순서 : 아래 command로 yaml 적용
-    - kubectl create namespace catalog
-    - kubectl apply -f serviceaccounts.yaml ([파일](./manifest/yaml/serviceaccounts.yaml))
-    - kubectl apply -f rbac.yaml ([파일](./manifest/yaml/rbac.yaml))
-
+   ```bash
+   #네임스페이스 생성
+   kubectl create namespace catalog
+   
+   # RBAC란 ? 역할 기반 액세스 제어를 
+   kubectl apply -f serviceaccounts.yaml
+   kubectl apply -f rbac.yaml 
+   
+   ```
+   
 ## Step 3. catalog manager 생성
 - 목적 : `catalog manager 생성`
 - 생성 순서 : 아래 command로 yaml 적용
