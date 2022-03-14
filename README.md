@@ -33,7 +33,7 @@
   
    2. CatalogController crd 생성
    ```bash
-   #([폴더](./manifest/yaml/crds/key-mapping)) 
+   # 폴더 위치 : ./manifest/yaml/crds/key-mapping
    kubectl apply -f yaml/crds/key-mapping/ 
    
    ```
