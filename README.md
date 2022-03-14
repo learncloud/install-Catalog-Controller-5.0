@@ -46,7 +46,7 @@
    #네임스페이스 생성
    kubectl create namespace catalog
    
-   # RBAC란 ? 역할 기반 액세스 제어를 
+   # RBAC란 ? 역할 기반 액세스 제어를 말함
    # 폴더 위치 : install-Catalog-Controller-5.0/manifest/yaml
    kubectl apply -f serviceaccounts.yaml
    kubectl apply -f rbac.yaml 
@@ -56,6 +56,7 @@
 ## Step 3. catalog manager 생성
 - 목적 : `catalog manager 생성`
 - 생성 순서 : 아래 command로 yaml 적용
+   
     - kubectl apply -f controller-manager-deployment.yaml ([파일](./manifest/yaml/controller-manager-deployment.yaml))
         - 비고: 반드시!!, 각 파일에 image 항목의 {imageRegistry}와 {catalogVersion}은  사용자 환경에 맞게 수정해야 합니다. ({imageRegistry}/kubernetes-service-catalog/service-catalog:v{catalogVersion})
     - kubectl apply -f controller-manager-service.yaml ([파일](./manifest/yaml/controller-manager-service.yaml))
