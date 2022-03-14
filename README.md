@@ -65,7 +65,8 @@
     # 파일 위치 : ./manifest/yaml/controller-manager-deployment.yaml
     kubectl apply -f controller-manager-deployment.yaml
     
-    #파일위치 : ./manifest/yaml/controller-manager-service.yaml
+    # 파일위치 : ./manifest/yaml/controller-manager-service.yaml
+    # service ip를 달아주는 yaml파일
     kubectl apply -f controller-manager-service.yaml
     
     ```
