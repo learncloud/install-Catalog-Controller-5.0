@@ -70,7 +70,7 @@
     
     ```
     
- - 참고 : docker image가 없을 경우
+ - 참고 : local docker내에 image가 없을 경우 업로드 하는방법
    ```bash
    docker pull quay.io/kubernetes-service-catalog/service-catalog:v0.3.0
    docker tag quay.io/kubernetes-service-catalog/service-catalog:v0.3.0 192.168.178.17:5000/service-catalog:v0.3.0
