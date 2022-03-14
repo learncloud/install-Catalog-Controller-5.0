@@ -31,12 +31,13 @@
    
    ```
   
-   2.
+   2. CatalogController crd 생성
    ```bash
    #([폴더](./manifest/yaml/crds/key-mapping)) 
    kubectl apply -f yaml/crds/key-mapping/ 
    
    ```
+
 
 ## Step 2. catalog controller namespace 및 servcice account 생성
 - 목적 : `catalog controller namespace 및 servcice account 생성`
