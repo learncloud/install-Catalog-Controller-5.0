@@ -25,7 +25,18 @@
 ## Step 1. 설치에 필요한 crd 생성
 - 목적 : `CatalogController crd 생성`
 - 생성 순서 : 아래 command로 yaml 적용
-    - kubectl apply -f yaml/crds/key-mapping/ ([폴더](./manifest/yaml/crds/key-mapping)) 
+   1. 설치에 필요한 파일 다운로드
+   ```bash
+   git clone https://github.com/learncloud/install-Catalog-Controller-5.0.git
+   
+   ```
+  
+   2.
+   ```bash
+   #([폴더](./manifest/yaml/crds/key-mapping)) 
+   kubectl apply -f yaml/crds/key-mapping/ 
+   
+   ```
 
 ## Step 2. catalog controller namespace 및 servcice account 생성
 - 목적 : `catalog controller namespace 및 servcice account 생성`
