@@ -58,7 +58,8 @@
 - 생성 순서 : 아래 command로 yaml 적용
     ```bash
     # 반드시 각 파일에 image 항목의 {imageRegistry}와 {catalogVersion}은  사용자 환경에 맞게 수정
-    # {imageRegistry}/kubernetes-service-catalog/service-catalog:v{catalogVersion} → 192.168.178.17:5000/kubernetes-service-catalog/service-catalog:v0.3.0 `or` quay.io/kubernetes-service-catalog/service-catalog:v0.3.0
+    # {imageRegistry}/kubernetes-service-catalog/service-catalog:v{catalogVersion} 
+    # → 192.168.178.17:5000/kubernetes-service-catalog/service-catalog:v0.3.0 **`or`** quay.io/kubernetes-service-catalog/service-catalog:v0.3.0
     
     # 파일 위치 : ./manifest/yaml/controller-manager-deployment.yaml
     kubectl apply -f controller-manager-deployment.yaml
