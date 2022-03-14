@@ -22,6 +22,15 @@
 - 비고: install script를 통해 설치하고자 하는 경우에는 /manifest/README.md를 참고 해주세요. 
 
 
+## Step 1 ~ 5를 무시하고 한번에 설치
+```bash
+cd ~/install-Catalog-Controller-5.0/manifest
+chmod 777 install-catalog.sh
+./install-catalog.sh install
+# ./install-catalog.sh {Fold}
+
+```
+
 ## Step 1. 설치에 필요한 crd 생성
 - 목적 : `CatalogController crd 생성`
 - 생성 순서 : 아래 command로 yaml 적용
@@ -104,17 +113,26 @@
 ## Step 5. catalog-webhook 생성
 - 목적 : `catalog-webhook 생성`
 - 생성 순서 : 아래 command 적용
-    - cd ~/install-Catalog-Controller-5.0/manifest/yaml
-    - kubectl apply -f webhook-register.yaml
-        - 비고: 해당 파일의 변수를 7번에서 생성한 키로 대체 합니다. (단, 생성된 키 공백은 모두 지우셔야 합니다.)
-        
-        - **이부분이 전혀 이해가안됨**
-            - {{ b64enc $ca.Cert }} --> key0 내부 값으로 대체
-            - {{ b64enc $cert.Cert }} --> cert 내부 값으로 대체
-            - {{ b64enc $cert.Key }} --> key 내부 값으로 대체
-    - kubectl apply -f webhook-deployment.yaml ([파일](./manifest/yaml/webhook-deployment.yaml))
-        - 비고: 반드시!!, 각 파일에 image 항목의 {imageRegistry}와 {catalogVersion}은  사용자 환경에 맞게 수정해야 합니다. ({imageRegistry}/kubernetes-service-catalog/service-catalog:v{catalogVersion})
-    - kubectl apply -f webhook-service.yaml ([파일](./manifest/yaml/webhook-service.yaml))
+    ```bash
+    cd ~/install-Catalog-Controller-5.0/manifest/yaml
+    kubectl apply -f webhook-register.yaml
+    #비고: 해당 파일의 변수를 7번에서 생성한 키로 대체 합니다. (단, 생성된 키 공백은 모두 지우셔야 합니다.)
+    {{ b64enc $ca.Cert }} --> key0 내부 값으로 대체
+    # ex) key0=$(awk 'NF {sub(/\r/, ""); printf "%s",$0;}' key0)
+    {{ b64enc $cert.Cert }} --> cert 내부 값으로 대체
+    # ex) cert=$(awk 'NF {sub(/\r/, ""); printf "%s",$0;}' cert)
+    {{ b64enc $cert.Key }} --> key 내부 값으로 대체
+    # ex) key=$(awk 'NF {sub(/\r/, ""); printf "%s",$0;}' key)
+    
+    # 비고: 반드시!!, 각 파일에 image 항목의 {imageRegistry}와 {catalogVersion}은  사용자 환경에 맞게 수정해야 합니다. 
+    # ({imageRegistry}/kubernetes-service-catalog/service-catalog:v{catalogVersion})
+    
+    kubectl apply -f webhook-deployment.yaml ([파일위치](./manifest/yaml/webhook-deployment.yaml))
+    
+    kubectl apply -f webhook-service.yaml ([파일위치](./manifest/yaml/webhook-service.yaml))
+
+    ```
+    
 
 ## 삭제 가이드
 1. [사용중인 리소스 제거](#Step-1-사용중인-리소스-제거)
