@@ -11,7 +11,7 @@
 ## 폐쇄망 구축 가이드
 
 1. 사용하는 image를 다운받고 저장합니다.
-   - [install-registry 이미지 푸시하기 참조](https://github.com/tmax-cloud/install-registry/blob/5.0/podman.md)
+   - [install-registry 이미지 푸시하기 참조](https://github.com/learncloud/install-registry-docker-ce/blob/main/readme.md)
 
 ## 설치 가이드
 1. [설치에 필요한 crd 생성](#Step-1-설치에-필요한-crd-생성)
