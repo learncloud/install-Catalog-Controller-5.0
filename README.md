@@ -139,6 +139,17 @@ chmod 777 install-catalog.sh
 2. [설치 리소스 제거](#Step-2-설치-리소스-제거)
 3. [CRD 제거](#Step-3-CRD-제거)
 
+## Step 1~3을 무시하고 진행
+
+```bash
+cd ~/install-Catalog-Controller-5.0/manifest
+chmod 777 install-catalog.sh
+./install-catalog.sh uninstall
+# ./install-catalog.sh {Fold}
+# {Fold}부분에 뭘 쓰느냐에 따라 설치될지 제거될지 결정됨. 스크립트에install  or uninstall 조건문 걸려있음
+
+```
+
 ## Step 1. 사용중인 리소스 제거
 - 목적 : `사용중인 리소스 차례로 제거`
 - 삭제 순서 : 아래 command 순서대로 적용
