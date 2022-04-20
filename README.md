@@ -13,16 +13,9 @@
 1. 사용하는 image를 다운받고 저장합니다.
    - [install-registry 이미지 푸시하기 참조](https://github.com/learncloud/install-registry-docker-ce/blob/main/readme.md)
 
-## 설치 가이드
-1. [설치에 필요한 crd 생성](#Step-1-설치에-필요한-crd-생성)
-2. [catalog controller namespace 및 servcice account 생성](#Step-2-catalog-controller-namespace-및-servcice-account-생성)
-3. [catalog manager 생성](#Step-3-catalog-manager-생성)
-4. [webhook 인증 키 생성](#Step-4-webhook-인증-키-생성)
-5. [catalog-webhook 생성](#Step-5-catalog-webhook-생성)
-- 비고: install script를 통해 설치하고자 하는 경우에는 /manifest/README.md를 참고 해주세요. 
 
-
-## Step 1 ~ 5를 무시하고 한번에 설치
+## 원스탭 설치 가이드
+- 아래Step 1 ~ 5를 무시하고 한번에 설치
 ```bash
 cd ~/install-Catalog-Controller-5.0/manifest
 chmod 777 install-catalog.sh
@@ -30,6 +23,15 @@ chmod 777 install-catalog.sh
 # ./install-catalog.sh {Fold}
 
 ```
+
+
+## 설치 가이드
+1. [설치에 필요한 crd 생성](#Step-1-설치에-필요한-crd-생성)
+2. [catalog controller namespace 및 servcice account 생성](#Step-2-catalog-controller-namespace-및-servcice-account-생성)
+3. [catalog manager 생성](#Step-3-catalog-manager-생성)
+4. [webhook 인증 키 생성](#Step-4-webhook-인증-키-생성)
+5. [catalog-webhook 생성](#Step-5-catalog-webhook-생성)
+- 비고: install script를 통해 설치하고자 하는 경우에는 /manifest/README.md를 참고 해주세요. 
 
 ## Step 1. 설치에 필요한 crd 생성
 - 목적 : `CatalogController crd 생성`
