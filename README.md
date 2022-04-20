@@ -15,7 +15,7 @@
 
 
 ## 원스탭 설치 가이드
-- 아래Step 1 ~ 5를 무시하고 한번에 설치
+- `아래Step 1 ~ 5를 무시하고 한번에 설치진행`
 ```bash
 cd ~/install-Catalog-Controller-5.0/manifest
 chmod 777 install-catalog.sh
