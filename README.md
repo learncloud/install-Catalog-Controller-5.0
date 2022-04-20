@@ -145,7 +145,7 @@ chmod 777 install-catalog.sh
 cd ~/install-Catalog-Controller-5.0/manifest
 chmod 777 install-catalog.sh
 ./install-catalog.sh uninstall
-# ./install-catalog.sh {Fold}
+# ./install-catalog.sh {install or uninstall }
 # {Fold}부분에 뭘 쓰느냐에 따라 설치될지 제거될지 결정됨. 스크립트에install  or uninstall 조건문 걸려있음
 
 ```
