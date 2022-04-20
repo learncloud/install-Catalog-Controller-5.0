@@ -6,7 +6,7 @@
 - latest version: 0.3.0
 
 ## Prerequisites
-- template을 사용하고자 하는 경우, install-tsb 프로젝트를 참고하여 선 설치 해주시기 바랍니다.
+- TemplateServiceBroker를 사용하고자 하는 경우, install-tsb 프로젝트를 참고하여 선 설치 해주시기 바랍니다.
 
 ## 폐쇄망 구축 가이드
 
